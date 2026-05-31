@@ -1,0 +1,110 @@
+# Coral Source Specification for Zenith CRM & E-Commerce Data
+# Register this source in Coral by running: coral source add --file ./sources.yaml
+
+name: zenith_crm
+description: "Zenith CRM and E-Commerce local file database containing customer accounts, order logs, product details, and support tickets."
+version: "1.0.0"
+
+tables:
+  customers:
+    description: "Customer database tracking names, contact details, company names, signup dates, and subscription plans."
+    path: "../data/customers.csv"
+    format: "csv"
+    schema:
+      columns:
+        - name: id
+          type: "varchar"
+          description: "Unique identifier for the customer (Primary Key)"
+        - name: name
+          type: "varchar"
+          description: "Full name of the customer contact"
+        - name: email
+          type: "varchar"
+          description: "Email address of the customer"
+        - name: company
+          type: "varchar"
+          description: "Company name associated with the account"
+        - name: signup_date
+          type: "date"
+          description: "Date the customer signed up"
+        - name: tier
+          type: "varchar"
+          description: "Subscription tier: Enterprise, Pro, or Free"
+        - name: monthly_spend
+          type: "double"
+          description: "Current recurring monthly spend in USD"
+
+  orders:
+    description: "Transaction ledger tracking client orders, product purchases, revenue, and fulfillment status."
+    path: "../data/orders.csv"
+    format: "csv"
+    schema:
+      columns:
+        - name: id
+          type: "varchar"
+          description: "Unique transaction identifier"
+        - name: customer_id
+          type: "varchar"
+          description: "Customer ID who made the purchase (Foreign Key)"
+        - name: product_id
+          type: "varchar"
+          description: "Product ID purchased (Foreign Key)"
+        - name: amount
+          type: "double"
+          description: "Total order amount in USD"
+        - name: status
+          type: "varchar"
+          description: "Fulfillment status: completed, pending, refunded"
+        - name: order_date
+          type: "date"
+          description: "Date the purchase occurred"
+
+  products:
+    description: "Catalog of software modules, custom add-ons, and package solutions offered by Zenith."
+    path: "../data/products.csv"
+    format: "csv"
+    schema:
+      columns:
+        - name: id
+          type: "varchar"
+          description: "Unique product identifier"
+        - name: name
+          type: "varchar"
+          description: "Title of the software product or package"
+        - name: category
+          type: "varchar"
+          description: "Market category: Software or Cloud Services"
+        - name: price
+          type: "double"
+          description: "Unit price of the product"
+        - name: stock
+          type: "integer"
+          description: "Available items in inventory (software licenses)"
+
+  support_tickets:
+    description: "Customer support cases logged by clients, mapping high-priority tickets directly to engineering tasks in GitHub."
+    path: "../data/support_tickets.csv"
+    format: "csv"
+    schema:
+      columns:
+        - name: id
+          type: "varchar"
+          description: "Unique ticket identifier"
+        - name: customer_id
+          type: "varchar"
+          description: "Customer ID who opened the ticket (Foreign Key)"
+        - name: subject
+          type: "varchar"
+          description: "Brief summary of the issue or feature request"
+        - name: priority
+          type: "varchar"
+          description: "Severity: high, medium, low"
+        - name: status
+          type: "varchar"
+          description: "Ticket lifecycle status: open, closed"
+        - name: created_at
+          type: "date"
+          description: "Timestamp when the ticket was opened"
+        - name: github_issue_number
+          type: "integer"
+          description: "Linked GitHub issue number (null if not escalated to engineering)"

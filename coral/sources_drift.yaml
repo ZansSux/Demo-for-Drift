@@ -1,0 +1,59 @@
+# Coral Local Source Specification for Drift Mock Data
+# Register this source locally by running: coral source add --file ./sources_drift.yaml
+# This maps our local JSON files to the 'notion' and 'linear' SQL schemas,
+# allowing you to query them locally without needing live Notion/Linear API tokens!
+
+name: drift_mock
+description: "Mock databases representing Notion PRD features and Linear sprint issues to test sync drift."
+version: "1.0.0"
+
+tables:
+  notion_features:
+    description: "Product Requirement Documents and feature specs in Notion"
+    path: "../drift/notion_prd_mock.json"
+    format: "json"
+    schema:
+      columns:
+        - name: feat_id
+          type: "varchar"
+          description: "Unique feature code"
+        - name: title
+          type: "varchar"
+          description: "Feature name"
+        - name: description
+          type: "varchar"
+          description: "Feature requirements"
+        - name: priority
+          type: "varchar"
+          description: "Notion priority: High, Medium, Low"
+        - name: target_release
+          type: "varchar"
+          description: "Release iteration target"
+
+  linear_issues:
+    description: "Engineering tasks in Linear"
+    path: "../drift/linear_issues_mock.json"
+    format: "json"
+    schema:
+      columns:
+        - name: task_id
+          type: "varchar"
+          description: "Linear ticket ID"
+        - name: title
+          type: "varchar"
+          description: "Linear task title"
+        - name: status
+          type: "varchar"
+          description: "Sprint status: Done, In Progress, Todo, Backlog"
+        - name: assignee
+          type: "varchar"
+          description: "Developer assigned"
+        - name: priority
+          type: "varchar"
+          description: "Linear priority: High, Medium, Low"
+        - name: github_issue_number
+          type: "integer"
+          description: "Linked GitHub issue number"
+        - name: notion_feature_id
+          type: "varchar"
+          description: "Linked Notion feature ID"

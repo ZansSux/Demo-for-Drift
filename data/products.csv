@@ -1,0 +1,6 @@
+id,name,category,price,stock
+PROD001,Zenith CRM Enterprise License,Software,2500.00,9999
+PROD002,Zenith Analytics Suite,Software,4999.00,9999
+PROD003,Stark Core Infrastructure Pack,Cloud Services,7500.00,9999
+PROD004,Zenith CRM Professional,Software,150.00,9999
+PROD005,Zenith Starter Pack,Software,120.00,9999

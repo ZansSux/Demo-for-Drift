@@ -1,0 +1,30 @@
+[
+  {
+    "feat_id": "FEAT001",
+    "title": "User Authentication via Enterprise SSO",
+    "description": "Enable enterprise clients to sign in using SAML 2.0 / OIDC (Okta, Azure AD, Ping Identity). Needs full admin panel control for SSO configurations.",
+    "priority": "High",
+    "target_release": "v2.1"
+  },
+  {
+    "feat_id": "FEAT002",
+    "title": "E-Commerce Order Analytics Dashboard",
+    "description": "A comprehensive visualization panel in the CRM for tracking e-commerce orders, total revenue, refund rates, and product categories.",
+    "priority": "Medium",
+    "target_release": "v2.1"
+  },
+  {
+    "feat_id": "FEAT003",
+    "title": "PDF Invoice Auto-Generator",
+    "description": "Automatically generate PDF invoices upon successful checkout and email them to customers. Must comply with regional tax formatting.",
+    "priority": "Medium",
+    "target_release": "v2.2"
+  },
+  {
+    "feat_id": "FEAT004",
+    "title": "Multi-currency checkout support",
+    "description": "Allow checkout transactions in USD, EUR, GBP, and CAD, automatically pulling live FX exchange rates twice daily.",
+    "priority": "Low",
+    "target_release": "v2.3"
+  }
+]

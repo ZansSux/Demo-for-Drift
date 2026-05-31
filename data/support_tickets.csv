@@ -1,0 +1,9 @@
+id,customer_id,subject,priority,status,created_at,github_issue_number
+TKT001,CUST002,Login page timeout on WayneCorp intranet,high,open,2026-05-28,1
+TKT002,CUST003,Stark Core Infrastructure Pack API throws 500 error,high,open,2026-05-29,2
+TKT003,CUST001,Database sync latency exceeding SLAs,medium,open,2026-05-29,3
+TKT004,CUST004,UI typo in profile setting page,low,open,2026-05-30,4
+TKT005,CUST005,Invoice email not sending automatically,medium,closed,2026-05-25,
+TKT006,CUST006,Enterprise SSO configuration fails,high,open,2026-05-30,5
+TKT007,CUST008,Starter pack billing renewal failed,medium,open,2026-05-31,
+TKT008,CUST010,Cannot delete outdated contacts,low,closed,2026-05-26,

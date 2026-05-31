@@ -1,0 +1,38 @@
+[
+  {
+    "task_id": "LIN101",
+    "title": "Implement Enterprise SSO Integration",
+    "status": "Done",
+    "assignee": "Alice Smith",
+    "priority": "High",
+    "github_issue_number": null,
+    "notion_feature_id": "FEAT001"
+  },
+  {
+    "task_id": "LIN102",
+    "title": "Build Order Analytics UI Component",
+    "status": "In Progress",
+    "assignee": "Bob Johnson",
+    "priority": "Medium",
+    "github_issue_number": null,
+    "notion_feature_id": "FEAT002"
+  },
+  {
+    "task_id": "LIN103",
+    "title": "Fix SSO Callback redirection bug",
+    "status": "Backlog",
+    "assignee": "Alice Smith",
+    "priority": "High",
+    "github_issue_number": 1,
+    "notion_feature_id": "FEAT001"
+  },
+  {
+    "task_id": "LIN104",
+    "title": "Implement Multi-currency support in checkout",
+    "status": "Todo",
+    "assignee": "Charlie Brown",
+    "priority": "Low",
+    "github_issue_number": 2,
+    "notion_feature_id": "FEAT004"
+  }
+]

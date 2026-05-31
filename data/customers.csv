@@ -1,0 +1,11 @@
+id,name,email,company,signup_date,tier,monthly_spend
+CUST001,Sarah Connor,sarah.c@cyberdyne.com,Cyberdyne Systems,2025-01-15,Enterprise,2500.00
+CUST002,Bruce Wayne,bruce@waynecorp.com,Wayne Enterprises,2025-02-10,Enterprise,5000.00
+CUST003,Tony Stark,tony@starkindustries.com,Stark Industries,2025-03-01,Enterprise,7500.00
+CUST004,Peter Parker,peter.p@dailybugle.com,Daily Bugle,2025-04-12,Pro,150.00
+CUST005,Clark Kent,clark.k@dailyplanet.com,Daily Planet,2025-04-20,Pro,150.00
+CUST006,Diana Prince,diana@museum.org,The Louvre,2025-05-02,Enterprise,3000.00
+CUST007,Barry Allen,barry.a@ccpd.gov,Central City Police,2025-05-18,Free,0.00
+CUST008,Hal Jordan,hal.j@ferris.com,Ferris Aircraft,2025-05-24,Pro,120.00
+CUST009,Arthur Curry,arthur@atlantis.gov,Atlantis Marine,2025-05-28,Free,0.00
+CUST010,Selina Kyle,selina@gothamcats.com,Gotham Feline Rescue,2025-05-30,Pro,120.00

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zenith CRM - E-Commerce & Operations Center</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Premium App Header -->
+    <header>
+      <div class="brand-section">
+        <div>
+          <h1 class="brand-logo">ZENITH</h1>
+          <span class="brand-tagline">CRM & Enterprise Hub</span>
+        </div>
+      </div>
+      <div class="system-status">
+        <span class="status-dot"></span>
+        <span>Systems Operational</span>
+      </div>
+    </header>
+
+    <!-- Sleek Tab Navigation Bar -->
+    <nav class="tabs-navigation">
+      <button class="tab-btn active" data-target="panel-crm">
+        📊 CRM Dashboard
+      </button>
+      <button class="tab-btn" data-target="panel-notion">
+        📓 Notion PRDs
+      </button>
+      <button class="tab-btn" data-target="panel-linear">
+        ⚡ Linear Backlog
+      </button>
+      <button class="tab-btn" data-target="panel-github">
+        🐙 GitHub Workspace
+      </button>
+      <button class="tab-btn drift-tab" data-target="panel-drift">
+        ✨ Drift Monitor
+      </button>
+    </nav>
+
+    <!-- VIEWPORT PANELS -->
+    <main>
+
+      <!-- 1. CRM Dashboard Panel -->
+      <section id="panel-crm" class="tab-panel active">
+        <div class="metrics-row">
+          <div class="glass-card metric-card">
+            <span class="metric-label">Monthly Spend Total</span>
+            <span class="metric-value">$20,420.00</span>
+            <div class="metric-trend trend-up">▲ 12.4% vs last month</div>
+          </div>
+          <div class="glass-card metric-card secondary">
+            <span class="metric-label">Active Support Tickets</span>
+            <span class="metric-value">6</span>
+            <div class="metric-trend trend-down">▼ 2 tickets resolved</div>
+          </div>
+          <div class="glass-card metric-card warning">
+            <span class="metric-label">Enterprise Accounts</span>
+            <span class="metric-value">4</span>
+            <div class="metric-trend trend-up">▲ 1 new signup</div>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <h2 style="margin-bottom: 1rem; font-weight: 600;">Premium Customer Ledger</h2>
+          <div class="table-wrapper">
+            <table id="crm-customers-table">
+              <thead>
+                <tr>
+                  <th>Customer ID</th>
+                  <th>Contact Name</th>
+                  <th>Company</th>
+                  <th>Subscription Tier</th>
+                  <th style="text-align: right;">Monthly Spend</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated dynamically via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Notion PRD Panel -->
+      <section id="panel-notion" class="tab-panel">
+        <div style="margin-bottom: 1.5rem;">
+          <h2 style="font-weight: 600; font-size: 1.6rem; margin-bottom: 0.25rem;">Notion Product Specs</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Active Product Requirement Documents (PRDs) and features targeted for future releases.</p>
+        </div>
+        <div id="notion-prd-grid" class="cards-grid">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </section>
+
+      <!-- 3. Linear Tickets Panel -->
+      <section id="panel-linear" class="tab-panel">
+        <div class="glass-card">
+          <div style="margin-bottom: 1.5rem;">
+            <h2 style="font-weight: 600; font-size: 1.6rem; margin-bottom: 0.25rem;">Linear Engineering Backlog</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">Active workflow status of product tickets assigned to the engineering sprint backlog.</p>
+          </div>
+          <div class="table-wrapper">
+            <table id="linear-table">
+              <thead>
+                <tr>
+                  <th>Task ID</th>
+                  <th>Task Summary</th>
+                  <th>Assignee</th>
+                  <th>Sprint Status</th>
+                  <th>Priority</th>
+                  <th>Linked Git Issue</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated dynamically via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. GitHub Workspace Panel -->
+      <section id="panel-github" class="tab-panel">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          
+          <div class="glass-card">
+            <h2 style="margin-bottom: 1rem; font-weight: 600; color: var(--secondary);">GitHub Issues</h2>
+            <div class="table-wrapper">
+              <table id="github-issues-table">
+                <thead>
+                  <tr>
+                    <th>Issue</th>
+                    <th>Issue Title</th>
+                    <th>Label</th>
+                    <th>State</th>
+                    <th>Linear Task</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Populated dynamically via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <h2 style="margin-bottom: 1rem; font-weight: 600; color: var(--primary);">Active Pull Requests</h2>
+            <div class="table-wrapper">
+              <table id="github-pulls-table">
+                <thead>
+                  <tr>
+                    <th>PR</th>
+                    <th>Pull Request</th>
+                    <th>Author</th>
+                    <th>Status</th>
+                    <th>Closes Issue</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Populated dynamically via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 5. Drift Monitor Panel -->
+      <section id="panel-drift" class="tab-panel">
+        <div class="drift-hero">
+          <h2>Project Sync & Drift Monitor</h2>
+          <p>Analyzing inconsistencies between Notion specifications, Linear tasks, and GitHub codebases.</p>
+        </div>
+
+        <div id="drift-list-container" class="drift-grid">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Video Demo CLI Playbook -->
+        <div class="glass-card playbook-card">
+          <h3>🎬 Hackathon Video Demo Playbook</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+            Follow this simple script to record a mind-blowing 2-minute demo of **Coral** detecting sync drifts in real-time.
+          </p>
+          <div class="playbook-steps">
+            <div class="step">
+              <span class="step-num">1</span>
+              <span class="step-desc">
+                <strong>Show the Problem</strong>: Click through this dashboard. Highlight that **Notion**, **Linear**, and **GitHub** are siloed systems. Show how easy it is for things to slip out of sync (e.g., pointing out the red alerts in the <em>Drift Monitor</em> tab).
+              </span>
+            </div>
+            <div class="step">
+              <span class="step-num">2</span>
+              <span class="step-desc">
+                <strong>Open Coral CLI</strong>: Open your terminal and run `coral source discover`. Explain that Coral bridges these silos by turning APIs and tools into standard SQL schemas instantly.
+              </span>
+            </div>
+            <div class="step">
+              <span class="step-num">3</span>
+              <span class="step-desc">
+                <strong>Run the Drift Queries</strong>: Copy and execute any of the SQL queries shown above. For example, run the <strong>Requirement Drift</strong> query to instantly pull the invoice generator feature from Notion that engineering missed.
+              </span>
+            </div>
+            <div class="step">
+              <span class="step-num">4</span>
+              <span class="step-desc">
+                <strong>Show the Magic (Cross-Source Join)</strong>: Explain how Coral does all this locally, instantly, with simple SQL syntax—replacing hundreds of lines of complex API integration glue code!
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
