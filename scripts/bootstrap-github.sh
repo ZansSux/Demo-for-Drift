@@ -47,12 +47,27 @@ fi
 echo -e "${GREEN}[✓] GitHub CLI is installed and authenticated!${NC}"
 
 # 4. Check if remote origin is set
+# If it points to the read-only upstream repository, remove it so we can create a personal demo repo
+if git remote get-url origin &> /dev/null; then
+    ORIGIN_URL=$(git remote get-url origin)
+    if [[ "$ORIGIN_URL" == *"ZansSux/Demo-for-Drift"* ]]; then
+        echo -e "${YELLOW}[!] Remote 'origin' points to the read-only upstream repository: ZansSux/Demo-for-Drift${NC}"
+        echo -e "We will remove this remote and help you set up your own repository for the Drift demo."
+        git remote remove origin
+    fi
+fi
+
 if ! git remote get-url origin &> /dev/null; then
-    echo -e "${YELLOW}[!] No remote 'origin' detected.${NC}"
+    echo -e "${YELLOW}[!] No writeable remote 'origin' detected.${NC}"
     echo -e "We will help you create a remote repository on GitHub now."
-    echo -e "Please enter a name for your GitHub demo repository (default: ${YELLOW}coral-drift-demo${NC}): "
-    read -r REPO_NAME
-    REPO_NAME=${REPO_NAME:-coral-drift-demo}
+    if [ -n "$1" ]; then
+        REPO_NAME="$1"
+        echo -e "Using repository name from argument: ${YELLOW}$REPO_NAME${NC}"
+    else
+        echo -e "Please enter a name for your GitHub demo repository (default: ${YELLOW}coral-drift-demo${NC}): "
+        read -r REPO_NAME
+        REPO_NAME=${REPO_NAME:-coral-drift-demo}
+    fi
 
     echo -e "${BLUE}[*] Creating GitHub repository '${REPO_NAME}'...${NC}"
     gh repo create "$REPO_NAME" --public --source=. --push
@@ -98,7 +113,7 @@ CURRENT_BRANCH=$(git branch --show-current)
 
 # PR 1 for Multi-currency Checkout (Open PR)
 echo -e " - Creating Branch & Open PR for Multi-currency checkout..."
-git checkout -b feat/multi-currency
+git checkout -B feat/multi-currency
 mkdir -p app/js
 echo "// Multi-currency exchange rate mapping logic" >> app/js/app.js
 git add app/js/app.js
@@ -113,7 +128,7 @@ gh pr create \
 # PR 2 for Shadow Work (Dark Mode Theme - Merged PR!)
 echo -e " - Creating Branch & Merged PR for Sleek Dark Mode..."
 git checkout "$CURRENT_BRANCH"
-git checkout -b design/dark-mode
+git checkout -B design/dark-mode
 echo "/* Dark Mode Theme custom CSS overrides */" >> app/css/style.css
 git add app/css/style.css
 git commit -m "design: add sleek dark mode glassmorphism styles"
@@ -131,7 +146,7 @@ gh pr merge --merge --delete-branch "$PR_2_URL"
 
 # Return to main branch
 git checkout "$CURRENT_BRANCH"
-git pull origin "$CURRENT_BRANCH"
+git pull origin "$CURRENT_BRANCH" || true
 
 echo -e "\n${GREEN}======================================================${NC}"
 echo -e "${GREEN}      GitHub Drift Dataset Successfully Bootstrapped! ${NC}"

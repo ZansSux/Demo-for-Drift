@@ -604,3 +604,32 @@ tr:hover td {
 .step-desc strong {
   color: var(--accent-gold);
 }
+
+/* Interactive Query Simulation Buttons & Results */
+.run-query-btn {
+  background: var(--secondary-glow);
+  color: var(--secondary);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.run-query-btn:hover {
+  background: var(--secondary);
+  color: black;
+  box-shadow: 0 0 10px var(--secondary-glow);
+  font-weight: 600;
+}
+
+.query-results-container {
+  animation: fadeIn 0.3s ease forwards;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
